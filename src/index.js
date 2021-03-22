@@ -1,3 +1,4 @@
+
 let addToy = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,6 +42,36 @@ function renderToy(toyObject) {
 
 
   getToy()
+
+const toyInput = document.querySelector(`body > div.container > form > input.submit`)
+toyInput.addEventListener('submit', e => {
+  e.preventDefault()
+  
+  const nameInput = e.target.name.value
+  const imageInput = e.target.image.value
+
+//   fetch (`http://localhost:3000/toys`, {
+//   method: 'POST',  
+//   header: 
+// {
+//   "Content-Type": "application/json",
+//   Accept: "application/json"
+// },
+
+// body: JSON.stringify({
+//   name: nameInput,
+//   image: imageInput,
+//   likes: 0
+// })
+//   })
+//          debugger
+//      .then(response => response.json())
+//      .then(newtoyObject => renderToy(newtoyObject))
+     
+//      //const parentDiv = document.querySelector('#toy-collection')
+
+})
+
 
 
 // toyObject = 
