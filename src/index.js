@@ -14,20 +14,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const toyGetrequest = `http://localhost:3000/toys`
+const toyGetRequest = `http://localhost:3000/toys`
 
-fetch (toyGetrequest)
+function getToy() {
+fetch (toyGetRequest)
   .then(response => response.json())
   .then(toyObject => { 
-    toyObject.forEach(element => console.log(element))
+    toyObject.forEach(toyObject => renderToy(toyObject))
   })
+}
 
-//   function renderToy(toyObject){
-//     // const h2 = 
-//     // h2.textContent
-//     // const img = 
-//     // const p = 
-//   }
+function renderToy(toyObject) {
+
+    const div = document.createElement('div.card')
+    div.dataset.id = toyObject.id
+
+    div.innerHTML =
+   `<h2>${toyObject.name}</h2>
+    <img src='${toyObject.image}' class="toy-avatar" />
+    <p>'${toyObject.likes} Likes' </p>
+    <button class="like-btn">Like <3</button>`
+
+    const parentDiv = document.querySelector('#toy-collection')
+    parentDiv.append(div)
+  }
+
+
+  getToy()
+
 
 // toyObject = 
 //     const toyDivCard = document.createElement('div#card')
