@@ -13,3 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const toyGetrequest = `http://localhost:3000/toys`
+
+fetch (toyGetrequest)
+   .then(response => response.json())
+   .then(response => {
+     
+   })
+
+
