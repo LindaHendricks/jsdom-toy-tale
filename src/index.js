@@ -40,36 +40,31 @@ function renderToy(toyObject) {
     parentDiv.append(div)
   }
 
-
-  getToy()
-
-const toyInput = document.querySelector(`body > div.container > form > input.submit`)
-toyInput.addEventListener('submit', e => {
+const toyInput = document.querySelector(`body > div.container > form`)
+toyInput.addEventListener("submit", e => {
   e.preventDefault()
   
   const nameInput = e.target.name.value
   const imageInput = e.target.image.value
+console.log(nameInput)
+console.log(imageInput)
 
-//   fetch (`http://localhost:3000/toys`, {
-//   method: 'POST',  
-//   header: 
-// {
-//   "Content-Type": "application/json",
-//   Accept: "application/json"
-// },
+  fetch (`http://localhost:3000/toys`, {
+    method: 'POST',  
+    header: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
 
-// body: JSON.stringify({
-//   name: nameInput,
-//   image: imageInput,
-//   likes: 0
-// })
-//   })
-//          debugger
-//      .then(response => response.json())
-//      .then(newtoyObject => renderToy(newtoyObject))
-     
-//      //const parentDiv = document.querySelector('#toy-collection')
+    body: JSON.stringify({
+      "name": "nameInput",
+      "image": "imageInput",
+      "likes": 0
+    })
+  })
 
+    .then(response => response.json())
+    .then(newToyObject => renderToy(newToyObject))
 })
 
 
@@ -84,3 +79,6 @@ toyInput.addEventListener('submit', e => {
 //     `
 
 //     const parentDiv = document.querySelector('div#toy-collection')
+
+
+getToy()
