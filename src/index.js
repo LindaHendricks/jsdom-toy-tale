@@ -17,9 +17,25 @@ document.addEventListener("DOMContentLoaded", () => {
 const toyGetrequest = `http://localhost:3000/toys`
 
 fetch (toyGetrequest)
-   .then(response => response.json())
-   .then(response => {
-     
-   })
+  .then(response => response.json())
+  .then(toyObject => { 
+    toyObject.forEach(element => console.log(element))
+  })
 
+//   function renderToy(toyObject){
+//     // const h2 = 
+//     // h2.textContent
+//     // const img = 
+//     // const p = 
+//   }
 
+// toyObject = 
+//     const toyDivCard = document.createElement('div#card')
+//     toyDivCard.innerHTML = `
+//     <h2>${name}</h2>
+//     <img src=${image} class="toy-avatar" />
+//     <p>${likes} </p>
+//     <button class="like-btn">Like <3</button>
+//     `
+
+//     const parentDiv = document.querySelector('div#toy-collection')
